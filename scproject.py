@@ -5,7 +5,7 @@ import plotly.express as px
 
 st.set_page_config(layout= 'wide', page_title= 'scproject')
 
-df = pd.read_csv('cleaned_SC_project_df.csv', index_col= 0)
+df = pd.read_csv('cleaned_SC_project_df.csv', index_col= 0, encoding='latin-1')
 
 st.title('What is the percentage of each Shipping_Mode?')
 st.plotly_chart(px.pie(df, names= 'Shipping_Mode'))
