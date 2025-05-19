@@ -117,6 +117,6 @@ else:
     st.plotly_chart(fig4)
 
     st.header("5. Delivery Delay by Customer Segment")
-    delay_segment = df.groupby('Customer_Segment')['shipping_delay'].sum().reset_index()
+    delay_segment = df.groupby('Customer_Segment')['shipping_delay'].mean().reset_index()
     fig5 = px.bar(delay_segment, x='Customer_Segment', y='shipping_delay', title="Average Delivery Delay per Segment")
     st.plotly_chart(fig5)
