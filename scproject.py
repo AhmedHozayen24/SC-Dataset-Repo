@@ -54,7 +54,7 @@ if page == "Basic Analysis":
 
     - **Standard Class** shipping is the most frequently used mode (see Chart 1), 
       suggesting a balance between cost and delivery time.
-    - **The United States and Puerto Rico** top the list of order volume (Chart 2), 
+    - **The United States and Francia** top the list of order volume (Chart 2), 
       indicating key markets.
     - **Cumulative profit** shows consistent growth over time (Chart 3), a good indicator 
       of business performance.
