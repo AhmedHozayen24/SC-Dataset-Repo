@@ -13,19 +13,55 @@ page = st.sidebar.radio("Select Page", ["Basic Analysis", "Advanced Analysis", "
 
 if page == "Basic Analysis":
     st.title('Basic Analysis')
-    
-    st.header('What is the percentage of each Shipping_Mode?')
-    st.plotly_chart(px.pie(df, names='Shipping_Mode'))
-    
-    st.header('What is the total number of orders per Country?')
+
+    # Introduction
+    st.markdown("""
+    ### 📊 Introduction
+    This dataset provides transactional order data across multiple regions, 
+    product categories, and customer segments. It includes information about 
+    order processing, shipping, profitability, and customer behavior.
+
+    In this section, we aim to:
+    - Understand shipping preferences.
+    - Identify regions with high order volumes.
+    - Observe profitability trends over time.
+    """)
+
+    # Shipping Mode Pie Chart
+    st.header('1. What is the percentage of each Shipping Mode?')
+    fig1 = px.pie(df, names='Shipping_Mode', title='Distribution of Shipping Modes')
+    st.plotly_chart(fig1)
+
+    # Orders by Country
+    st.header('2. What is the total number of orders per Country?')
     Order_Country_count = df.Order_Country.value_counts().reset_index()
-    st.plotly_chart(px.bar(Order_Country_count, x='Order_Country', y='count'))
-    
-    st.header('What is the cumulative profit from start date till end date?')
+    Order_Country_count.columns = ['Order_Country', 'count']
+    fig2 = px.bar(Order_Country_count, x='Order_Country', y='count', title='Order Volume by Country')
+    st.plotly_chart(fig2)
+
+    # Cumulative Profit Over Time
+    st.header('3. What is the cumulative profit from start date till end date?')
     df_sorted = df.sort_values(by='order_date_(DateOrders)')
     df_sorted['cum_profit'] = df_sorted['Order_Profit_Per_Order'].cumsum().round(2)
-    st.plotly_chart(px.line(data_frame=df_sorted, x='order_date_(DateOrders)', y='cum_profit'))
+    fig3 = px.line(data_frame=df_sorted, x='order_date_(DateOrders)', y='cum_profit', 
+                   title='Cumulative Profit Over Time')
+    st.plotly_chart(fig3)
 
+    # Conclusion / Insights
+    st.markdown("""
+    ---
+    ### 📈 Conclusion & Key Insights
+
+    - **Standard Class** shipping is the most frequently used mode (see Chart 1), 
+      suggesting a balance between cost and delivery time.
+    - **The United States and Puerto Rico** top the list of order volume (Chart 2), 
+      indicating key markets.
+    - **Cumulative profit** shows consistent growth over time (Chart 3), a good indicator 
+      of business performance.
+
+    These charts reflect positive logistics and revenue health. Deeper analysis 
+    in the "Smart Analysis" section explores delays, efficiency, and segment behavior.
+    """)
 elif page == "Advanced Analysis":
     st.title('Advanced Analysis')
     
