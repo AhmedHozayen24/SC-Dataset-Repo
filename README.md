@@ -1,6 +1,7 @@
 🗂 Project Overview
 📌 Introduction
-This project explores and analyzes a comprehensive e-commerce dataset containing over 5,000 customer orders. The dataset includes detailed attributes such as shipping modes, order regions, profit margins, delivery statuses, and customer segments.
+This project explores and analyzes a comprehensive e-commerce dataset . The dataset includes detailed attributes such as shipping modes,
+order regions, profit margins, delivery statuses, and customer segments.
 The primary goal is to uncover operational inefficiencies, regional trends, and profitability patterns to support business decision-making and strategic improvements.
 
 The analysis is divided into three main sections:
