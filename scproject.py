@@ -1,4 +1,3 @@
-
 import pandas as pd
 import streamlit as st
 import plotly.express as px
@@ -27,19 +26,16 @@ if page == "Basic Analysis":
     - Observe profitability trends over time.
     """)
 
-    # Shipping Mode Pie Chart
     st.header('1. What is the percentage of each Shipping Mode?')
     fig1 = px.pie(df, names='Shipping_Mode', title='Distribution of Shipping Modes')
     st.plotly_chart(fig1)
 
-    # Orders by Country
     st.header('2. What is the total number of orders per Country?')
     Order_Country_count = df.Order_Country.value_counts().reset_index()
     Order_Country_count.columns = ['Order_Country', 'count']
     fig2 = px.bar(Order_Country_count, x='Order_Country', y='count', title='Order Volume by Country')
     st.plotly_chart(fig2)
 
-    # Cumulative Profit Over Time
     st.header('3. What is the cumulative profit from start date till end date?')
     df_sorted = df.sort_values(by='order_date_(DateOrders)')
     df_sorted['cum_profit'] = df_sorted['Order_Profit_Per_Order'].cumsum().round(2)
@@ -47,14 +43,13 @@ if page == "Basic Analysis":
                    title='Cumulative Profit Over Time')
     st.plotly_chart(fig3)
 
-    # Conclusion / Insights
     st.markdown("""
     ---
     ### 📈 Conclusion & Key Insights
 
     - **Standard Class** shipping is the most frequently used mode (see Chart 1), 
       suggesting a balance between cost and delivery time.
-    - **The United States and Francia** top the list of order volume (Chart 2), 
+    - **The United States and Alaemnia** top the list of order volume (Chart 2), 
       indicating key markets.
     - **Cumulative profit** shows consistent growth over time (Chart 3), a good indicator 
       of business performance.
@@ -62,9 +57,10 @@ if page == "Basic Analysis":
     These charts reflect positive logistics and revenue health. Deeper analysis 
     in the "Smart Analysis" section explores delays, efficiency, and segment behavior.
     """)
+
 elif page == "Advanced Analysis":
     st.title('Advanced Analysis')
-    
+
     min_date = df['order_date_(DateOrders)'].min().date()
     max_date = df['order_date_(DateOrders)'].max().date()
 
@@ -120,3 +116,27 @@ else:
     delay_segment = df.groupby('Customer_Segment')['shipping_delay'].mean().reset_index()
     fig5 = px.bar(delay_segment, x='Customer_Segment', y='shipping_delay', title="Average Delivery Delay per Segment")
     st.plotly_chart(fig5)
+
+    st.header("6. Shipping Delay by Delivery Status")
+    delay_status = df.groupby('Delivery_Status')['shipping_delay'].mean().reset_index()
+    fig6 = px.bar(delay_status, x='Delivery_Status', y='shipping_delay', title="Average Shipping Delay per Delivery Status")
+    st.plotly_chart(fig6)
+
+    st.header("7. Loss vs Profit by Region")
+    profit_region = df.groupby(['Order_Region', 'is_profitable']).size().reset_index(name='count')
+    fig7 = px.bar(profit_region, x='Order_Region', y='count', color='is_profitable', barmode='group',
+                  title="Profitability Distribution by Region")
+    st.plotly_chart(fig7)
+
+    st.header("8. Product Profitability Overview")
+    product_profit = df.groupby('Product_Name')['Order_Profit_Per_Order'].sum().reset_index()
+    product_profit = product_profit.sort_values(by='Order_Profit_Per_Order').head(10)
+    fig8 = px.bar(product_profit, x='Product_Name', y='Order_Profit_Per_Order',
+                 title="Top 10 Loss-Making Products")
+    st.plotly_chart(fig8)
+
+    st.header("9. Segment-Wise Profitability")
+    segment_profit = df.groupby('Customer_Segment')['Order_Profit_Per_Order'].sum().reset_index()
+    fig9 = px.bar(segment_profit, x='Customer_Segment', y='Order_Profit_Per_Order',
+                 title="Profit by Customer Segment")
+    st.plotly_chart(fig9)
