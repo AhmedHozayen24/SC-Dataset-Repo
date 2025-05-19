@@ -5,7 +5,7 @@ import plotly.express as px
 
 st.set_page_config(layout='wide', page_title='scproject')
 
-df = pd.read_csv('cleaned_SC_project_df.csv', index_col=0)
+df = pd.read_csv('cleaned_SC_project_df.csv', encoding='latin1')
 df['order_date_(DateOrders)'] = pd.to_datetime(df['order_date_(DateOrders)'])
 
 # Sidebar selection for page navigation
