@@ -54,44 +54,44 @@ To analyze a large, unclean e-commerce dataset and extract actionable insights r
 
    Monthly trends in efficiency and profitability.
 
-Insight:
+   Insight:
 
-Central & Oceania regions show higher late delivery risk.
+   Central & Oceania regions show higher late delivery risk.
 
-Some customer segments (e.g., Consumer) suffer more delays than others.
+   Some customer segments (e.g., Consumer) suffer more delays than others.
 
-A small group of products consistently generate losses and should be reviewed.
+   A small group of products consistently generate losses and should be reviewed.
 
-7. Outcome Visualization
+   7. Outcome Visualization
    
-Action: Used pie charts, bar plots, and line graphs for interpretability.
+   Action: Used pie charts, bar plots, and line graphs for interpretability.
 
-Insight: Made trends visually clear for decision-makers — such as segment profitability and shipping performance.
+   Insight: Made trends visually clear for decision-makers — such as segment profitability and shipping performance.
 
-🔍 Key Takeaways
+   🔍 Key Takeaways
 
-Theme	Insight
+   Theme	Insight
 
-📦 Shipping Modes	Standard Class is dominant, but First Class has schedule reliability issues.
+   📦 Shipping Modes	Standard Class is dominant, but First Class has schedule reliability issues.
 
-🌍 Regions	U.S. & Puerto Rico lead in volume; Central & Oceania require logistic focus.
+   🌍 Regions	U.S. & Puerto Rico lead in volume; Central & Oceania require logistic focus.
 
-📉 Delays	Some customer segments face more frequent delays, possibly affecting satisfaction.
+   📉 Delays	Some customer segments face more frequent delays, possibly affecting satisfaction.
 
-💰 Profitability	~15% of orders are loss-making; product-level analysis shows specific issues.
+   💰 Profitability	~15% of orders are loss-making; product-level analysis shows specific issues.
+   
+   📈 Efficiency	Monthly trends suggest seasonal dips in shipping efficiency needing operational review.
 
-📈 Efficiency	Monthly trends suggest seasonal dips in shipping efficiency needing operational review.
+   ✅ Final Outcomes
 
-✅ Final Outcomes
+   Data cleaned, structured, and visualized for executive-level insight.
 
-Data cleaned, structured, and visualized for executive-level insight.
+   Streamlit dashboard created for real-time, interactive analysis.
 
-Streamlit dashboard created for real-time, interactive analysis.
+   Actionable recommendations for:
 
-Actionable recommendations for:
+   Logistics improvements
 
-Logistics improvements
+   Product strategy revisions
 
-Product strategy revisions
-
-Segment-targeted marketing
+   Segment-targeted marketing
