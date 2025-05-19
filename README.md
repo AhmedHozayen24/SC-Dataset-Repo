@@ -22,21 +22,21 @@ To analyze a large, unclean e-commerce dataset and extract actionable insights r
 
    Action: Performed univariate and bivariate visualizations using Plotly (e.g., pie charts, bar graphs, line plots).
 
-Insight: Identified key metrics such as most used shipping mode, high-volume countries, and cumulative profit over time.
+   Insight: Identified key metrics such as most used shipping mode, high-volume countries, and cumulative profit over time.
 
 4. Feature Engineering
    
-  1. Action: Created new metrics like:
+   Action: Created new metrics like:
 
-  2. cum_profit: Cumulative profit across time.
+   cum_profit: Cumulative profit across time.
 
-  3. shipping_efficiency: Ratio of scheduled vs. actual shipping days.
+   shipping_efficiency: Ratio of scheduled vs. actual shipping days.
 
-  4. Late_delivery_risk: Binary flag for delivery delays.
+   Late_delivery_risk: Binary flag for delivery delays.
 
-  5. is_profitable: Flag for order-level profit or loss.
+   is_profitable: Flag for order-level profit or loss.
 
-     Insight: These engineered features enabled deeper insights into operational bottlenecks and performance trends.
+   Insight: These engineered features enabled deeper insights into operational bottlenecks and performance trends.
 
 5. Advanced Filtering & Interactivity (Streamlit)
    
@@ -69,6 +69,7 @@ Action: Used pie charts, bar plots, and line graphs for interpretability.
 Insight: Made trends visually clear for decision-makers — such as segment profitability and shipping performance.
 
 🔍 Key Takeaways
+
 Theme	Insight
 
 📦 Shipping Modes	Standard Class is dominant, but First Class has schedule reliability issues.
