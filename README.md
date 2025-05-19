@@ -28,13 +28,13 @@ To analyze a large, unclean e-commerce dataset and extract actionable insights r
    
    Action: Created new metrics like:
 
-   cum_profit: Cumulative profit across time.
+      cum_profit: Cumulative profit across time.
 
-   shipping_efficiency: Ratio of scheduled vs. actual shipping days.
+      shipping_efficiency: Ratio of scheduled vs. actual shipping days.
 
-   Late_delivery_risk: Binary flag for delivery delays.
+      Late_delivery_risk: Binary flag for delivery delays.
 
-   is_profitable: Flag for order-level profit or loss.
+      is_profitable: Flag for order-level profit or loss.
 
    Insight: These engineered features enabled deeper insights into operational bottlenecks and performance trends.
 
